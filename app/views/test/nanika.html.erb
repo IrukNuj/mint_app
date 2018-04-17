@@ -1,0 +1,37 @@
+<h1>Post#index</h1>
+<p>Find me in app/views/post/index.html.erb</p>
+
+<% post1 = "今日からふぁっきゅー~~~！！！！" %>
+
+<% post2 = "明日からもふぁっきゅー~~~！！！！" %>
+
+<% post3 = "ふぁっきゅー~~~！！！！" %>
+
+<% post4 = "4ふぁっきゅー~~~！！！！" %>
+
+<%= post1 %><br>
+<%= post2 %><br>
+<%= post3 %><br>
+<%= post4 %><br>
+
+<%
+  posts=[
+    "ふぁっきゅーーーーーーーー！",
+    "どーも！みらいあかりだよ！",
+    "キュイッ"
+  ]
+%>
+
+<% posts.each do |p| %>
+  <div class="posts-index-item">
+      <%= p %>
+  </div>
+<% end %>
+
+
+
+<% @posts1.each do |p| %>
+  <div class="posts-index-item">
+      <%= p %>
+  </div>
+<% end %>

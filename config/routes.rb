@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'test/nanika'
+
+  get 'post/index'
+
   devise_for :users
   get 'home/index'
   get 'mahjong_course/index'

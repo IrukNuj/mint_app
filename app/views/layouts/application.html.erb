@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SktMjApp</title>
+    <title>Iruk_app</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,7 +11,7 @@
   <body>
 
     <header>
-      <div class="title">Skt-mj-app</div>
+      <div class="title">くりじゅんなんとかアプリ(仮)</div>
       <% if user_signed_in? %>
         Logged in as <strong><%= current_user.email %></strong>.
         <%= link_to "Settings", edit_user_registration_path, :class => "navbar-link" %>
