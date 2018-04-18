@@ -31,11 +31,12 @@
 
  .title{
    color: white;
-   font-size: 45px;
+   font-size: 40px;
    float: left;
-   padding-top: 8px;
+   padding-top: 13px;
    padding-left: 30px;
    bottom: 0;
+
    font-weight: 800;
  }
 
@@ -56,8 +57,8 @@
 }
 
 .navbar-link:hover {
-    background: #67c5ff;
-    color: white;
+    background: #FFFFFF;
+    color: #04b4ae;
 }
 
 .contents {
