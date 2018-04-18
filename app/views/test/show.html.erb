@@ -1,0 +1,12 @@
+
+
+<div class="posts">
+  <%= @id %>
+  <div class="aa">
+    <%= @post.created_at %>
+    <p>データベース上に作成してある必要があるよ！</p>
+  </div>
+</div>
+
+
+<%= link_to(@post.content,"/test/#{(@post.id)}") %>
