@@ -1,6 +1,8 @@
 <% @posts.each do |p| %>
   <div class="entry-inner">
-      <%= link_to(p.content,"/post/#{p.id}}") %>
+      <p><%= link_to(p.content,"/post/#{p.id}}") %><p>
+      <br><br>
+      <p>投稿日<%= p.created_at %></p>
   </div>
 <% end %>
 

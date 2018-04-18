@@ -2,11 +2,13 @@ Rails.application.routes.draw do
 
   get 'post/index'
   get 'post/new'
-  post 'post/new'
-  get 'post/create'
+  get 'post/new'
+  post 'post/create'
 #params引いてるから最下層に
   get 'post/:id' => 'post#show'
-
+  get 'post/:id/edit' => 'post#edit'
+  post 'post/:id/update' => 'post#update'
+  post 'post/:id/destroy' => 'post#destroy'
 
 #ここから
   get 'test/nanika'
