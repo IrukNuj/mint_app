@@ -1,5 +1,7 @@
 <%= form_tag("/post/#{@post.id}/update") do %>
-  <textarea name="content"><%= @post.content %></textarea>
 
-  <input type="submit" value=hennsyuuするよ~~！！>
+  <p>タイトル</p><textarea name="title" rows="2" cols="100"><%= @post.title %></textarea><br>
+  <p>内容</p><textarea name="content" rows="30" cols="100" wrap="hard"><%= @post.content %></textarea><br>
+
+  <input type="submit" value=編集するよ~~！！>
 <% end %>
