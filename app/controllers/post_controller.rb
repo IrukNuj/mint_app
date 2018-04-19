@@ -1,5 +1,6 @@
 class PostController < ApplicationController
 
+
   def index
     @posts = Post.all.order(created_at: :desc) #投稿日早い順にしてます。
   end
@@ -8,7 +9,7 @@ class PostController < ApplicationController
   end
 
   def create
-    @post = Post.new(content: params[:content],title: params[:title]) #textareaのname → paramsに引っ張ってSAVE
+    @post = Post.new(content: params[:content],title: params[:title],username: current_user.username) #textareaのname → paramsに引っ張ってSAVE
     @post.save
 
     redirect_to("/post/index")
@@ -36,6 +37,9 @@ class PostController < ApplicationController
   def show
     @id = params[:id]
     @post = Post.find_by(id:params[:id])
+  end
+  def search
+    @user=current_user
   end
 
 end
