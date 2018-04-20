@@ -149,7 +149,7 @@ h3 {
   padding-left: 50px;
 }
 
-.user_table {
+.user_table_on {
     padding: 0.5em 1em;
     margin: 2em 0;
     font-weight: bold;
@@ -160,14 +160,30 @@ h3 {
     box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.33);
 }
 
-.user_table p{
+.user_table_off {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    font-weight: bold;
+    color: #585858;/*文字色*/
+    background: #FFF;
+    border: solid 3px #848484;/*線*/
+    border-radius: 10px;/*角の丸み*/
+    box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.33);
+}
+
+.user_table_on p{
   margin: 0;
   padding: 0;
 }
 
+.user_table_off p{
+  margin: 0;
+  padding: 0;
+}
+
+
 .user_icon{
-  width: 100px;
-  height: 100px;
+  text-align: center;
 }
 
 .list{

@@ -1,0 +1,30 @@
+<div class="entry-inner">
+
+  <h3>@<%= @user.username %></h3>
+
+  <div class="user_icon">
+    <% if current_user.image_name == nil %>
+      <img src="/default_user.png" width="300" height="300">
+    <% else %>
+      <%= current_user.image %>
+    <% end %>
+  </div>
+
+  <p>登録日 : <%= @user.created_at %></p>
+
+  <h3>posts by @<%= @user.username %></h3>
+
+  <% @posts.each do |p| %>
+    <% if p.username == @user.username %>
+      <div class="entry-inner">
+        <p><%= link_to(p.title,"/post/#{p.id}}") %></p>
+        <p>Posted by @<%= p.username %><br>投稿日 : <%= p.created_at %></p>
+      </div>
+    <% else %>
+    <% end %>
+  <% end %>
+
+  <%= link_to("編集する","/user/edit") %>
+  <% #link_toのみではrouteのgetにしか接続できない(らしい)ので %>
+
+</div>

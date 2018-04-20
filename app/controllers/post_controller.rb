@@ -38,6 +38,7 @@ class PostController < ApplicationController
     @id = params[:id]
     @post = Post.find_by(id:params[:id])
   end
+
   def search
     @user=current_user
   end

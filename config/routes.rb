@@ -15,8 +15,15 @@ Rails.application.routes.draw do
   get 'test/new' => 'test#new'
   get 'test/:id' => 'test#show'
 #ここまでテスト用(見りゃわかるか((()
-  devise_for :users
+
   get 'home/index'
   root 'home#index'
+
+
+  devise_for :users
+
+  get 'users/index'
+  get 'users/:id' => 'users#show'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

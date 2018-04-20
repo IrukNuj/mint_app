@@ -1,0 +1,6 @@
+<% @users.each do |u| %>
+  <div class="entry-inner">
+      <p>@<%= link_to(u.username,"/users/#{u.id}}") %></p>
+      <p>登録日 : <%= u.created_at %></p>
+  </div>
+<% end %>
