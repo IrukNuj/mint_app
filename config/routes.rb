@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   post 'post/:id/update' => 'post#update'
   post 'post/:id/destroy' => 'post#destroy'
 
+  post 'image_file/upload'
+
 #ここから
   get 'test/nanika'
   get 'test/new' => 'test#new'
