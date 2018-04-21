@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :authentication_keys => [:username]
 
+  mount_uploader :icon, PictureUploader
+
+#  validates_presence_of :icon, on: :update
   #usernameを必須とする
 #      validates_uniqueness_of :username
 #      validates_presence_of :username

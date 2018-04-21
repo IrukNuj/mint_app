@@ -3,6 +3,7 @@ class PostController < ApplicationController
 
   def index
     @posts = Post.all.order(created_at: :desc) #投稿日早い順にしてます。
+    @users = User.all
   end
 
   def new
@@ -37,6 +38,8 @@ class PostController < ApplicationController
   def show
     @id = params[:id]
     @post = Post.find_by(id:params[:id])
+    @comments = Comment.all
+    @users = User.all
   end
 
   def search

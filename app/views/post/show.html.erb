@@ -1,12 +1,48 @@
+<h1>
+  <p><%= @post.title %></p>
+</h1>
 
-  <h1>
-    <p><%= @post.title %></p>
-  </h1>
 <div class="entry-inner">
   <p><%= @post.content %></p>
   <br>
-  <p>Posted by @<%= @post.username %><br>投稿日 : <%= @post.created_at %></p>
+
+  <% u = @users.find_by(username: @post.username) %>
+  <% if u.icon.blank? %>
+    <img src="/default_user.png" width="70" height="70" class="comment_user_icon user_icon">
+  <% else %>
+    <img src="<%= u.icon %>" width="70" height="70" class="comment_user_icon user_icon">
+  <% end %>
+
+  <p>Posted by @<%= @post.username %>
+    <br>投稿日 : <%= @post.created_at %></p>
   <%= link_to("編集する","/post/#{@post.id}/edit") %>
   <%= link_to("削除する","/post/#{@post.id}/destroy",{method:"post"})%>
   <% #link_toのみではrouteのgetにしか接続できない(らしい)ので %>
 </div>
+
+
+<h3>コメント一覧</h3>
+<!--コメント項目-->
+<% @comments.each do |c| %>
+  <% u = @users.find_by(id: c.from_user_id) %>
+  <% if c.post_id == @id %>
+    <div class="entry-inner">
+      <p><%= c.content %></p>
+      <% if u.icon.blank? %>
+        <img src="/default_user.png" width="70" height="70" class="comment_user_icon user_icon">
+      <% else %>
+        <img src="<%= u.icon %>" width="70" height="70" class="comment_user_icon user_icon">
+      <% end %>
+      <p>Commented by @<%= u.username %>
+        <br>投稿日 : <%= c.created_at %></p>
+    </div>
+  <% else %>
+  <% end %>
+<% end %>
+
+<h3>コメントを投稿する</h3>
+  <%= form_tag("/comment/create") do %>
+  <input type="text" name="post_id" value="<%= @id %>" readonly>
+  <textarea name="content" rows="10" cols="70" wrap="hard" style="font-size:130%;"></textarea><br>
+  <input type="submit" name="" value=投稿する>
+<% end %>

@@ -1,6 +1,12 @@
+<h2>ユーザー一覧</h2>
 <% @users.each do |u| %>
   <div class="entry-inner">
-      <p>@<%= link_to(u.username,"/users/#{u.id}}") %></p>
-      <p>登録日 : <%= u.created_at %></p>
+    <% if u.icon.blank? %>
+      <img src="/default_user.png" width="112" height="112" class="index_user_icon user_icon">
+    <% else %>
+      <img src="<%= u.icon %>" width="112" height="112" class="index_user_icon user_icon">
+    <% end %>
+    <p>@<%= link_to(u.username,"/users/#{u.id}}") %></p>
+  <p>登録日 : <%= u.created_at %></p>
   </div>
 <% end %>

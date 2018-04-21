@@ -1,15 +1,15 @@
 <div class="entry-inner">
 
-  <h3>@<%= @user.username %></h3>
+  <h2>@<%= @user.username %></h2>
 
-  <div class="user_icon">
-    <% if current_user.image_name == nil %>
-      <img src="/default_user.png" width="300" height="300">
+
+  <div class="user_icon_tabe">
+    <% if @user.icon.blank? %>
+      <img src="/default_user.png" width="200" height="200" class="user_icon">
     <% else %>
-      <%= current_user.image %>
+      <img src="<%= @user.icon.to_s %>" width="200" height="200" class="user_icon">
     <% end %>
   </div>
-
   <p>登録日 : <%= @user.created_at %></p>
 
   <h3>posts by @<%= @user.username %></h3>
@@ -24,7 +24,7 @@
     <% end %>
   <% end %>
 
-  <%= link_to("編集する","/user/edit") %>
+  <%= link_to("編集する","/users/edit") %>
   <% #link_toのみではrouteのgetにしか接続できない(らしい)ので %>
 
 </div>

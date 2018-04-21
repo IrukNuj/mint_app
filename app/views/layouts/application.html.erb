@@ -35,18 +35,22 @@
       <div class="aside">
 
         <% if user_signed_in? %>
+
           <div class="user_table_on">
             <a href="/users/<%= current_user.id %>">
-              <div class="user_icon">
-                <% if current_user.image_name == nil %>
-                  <img src="/default_user.png" width="100" height="100">
+              <div class="user_icon_table">
+                <% if current_user.icon.blank? %>
+                  <img src="/default_user.png" width="70" height="70" class="user_icon">
                 <% else %>
-                  <%= current_user.image %>
+                  <img src="<%= current_user.icon %>" width="70" height="70" class="user_icon">
                 <% end %>
               </div>
             </a>
-            <p>@<%= current_user.username %></p>
+
+            <p>@<%= current_user.username %><br>id : <%= current_user.id %></p><br>
+
           </div>
+
         <% else %>
           <div class="user_table_off">
             <p>Please Login</p>

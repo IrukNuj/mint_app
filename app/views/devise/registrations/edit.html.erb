@@ -18,7 +18,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br>
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
@@ -27,7 +27,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation %><br>
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
@@ -37,9 +37,9 @@
   </div>
 
   <div class="field">
-   <%= f.label :image %><br />
-   <%= f.file_field :image %>
- </div>
+   <%= f.label :icon %><br>
+   <%= f.file_field :icon %>
+  </div>
 
   <div class="actions">
     <br><%= f.submit "更新" %>

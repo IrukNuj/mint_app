@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get 'home/index'
   root 'home#index'
 
+  post 'comment/create'
+  get 'comment/index'
 
   devise_for :users
 
