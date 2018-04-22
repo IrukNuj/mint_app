@@ -42,7 +42,7 @@
 
 <h3>コメントを投稿する</h3>
   <%= form_tag("/comment/create") do %>
-  <input type="text" name="post_id" value="<%= @id %>" readonly>
+  <input type="text" name="post_id" value="<%= @id %>" readonly><br>
   <textarea name="content" rows="10" cols="70" wrap="hard" style="font-size:130%;"></textarea><br>
   <input type="submit" name="" value=投稿する>
 <% end %>

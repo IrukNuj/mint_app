@@ -5,13 +5,13 @@
     <%  n = p.username
         u = @users.find_by(username: n) %> <!-- ここめっちゃ汚い。なんとかしてほしい -->
 
-    <% if u.icon.blank? %>
-      <img src="/default_user.png" width="136" height="136" class="index_user_icon user_icon">
-    <% else %>
-      <img src="<%= u.icon %>" width="136" height="136" class="index_user_icon user_icon">
-    <% end %>
-    
     <p><%= link_to(p.title,"/post/#{p.id}}")%></p>
+
+    <% if u.icon.blank? %>
+      <img src="/default_user.png" width="73" height="73" class="index_user_icon user_icon">
+    <% else %>
+      <img src="<%= u.icon %>" width="73" height="73" class="index_user_icon user_icon">
+    <% end %>
 
     <p>Posted by @<%= u.username %><br>投稿日 : <%= p.created_at %></p>
   </div>

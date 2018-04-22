@@ -14,4 +14,8 @@ class HomeController < ApplicationController
   def destroy
   end
 
+  def top
+#    render :layout => nil
+  end
+
 end

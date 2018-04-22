@@ -18,8 +18,10 @@ Rails.application.routes.draw do
   get 'test/:id' => 'test#show'
 #ここまでテスト用(見りゃわかるか((()
 
+
+
   get 'home/index'
-  root 'home#index'
+  root 'home#top'
 
   post 'comment/create'
   get 'comment/index'
