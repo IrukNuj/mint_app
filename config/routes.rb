@@ -18,8 +18,6 @@ Rails.application.routes.draw do
   get 'test/:id' => 'test#show'
 #ここまでテスト用(見りゃわかるか((()
 
-
-
   get 'home/index'
   root 'home#top'
 
@@ -30,6 +28,9 @@ Rails.application.routes.draw do
 
   get 'users/index'
   get 'users/:id' => 'users#show'
+
+  post "likes/:post_id/create" => "likes#create"
+  post "likes/:post_id/destroy" => "likes#destroy"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

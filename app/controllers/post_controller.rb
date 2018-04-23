@@ -40,6 +40,7 @@ class PostController < ApplicationController
     @post = Post.find_by(id:params[:id])
     @comments = Comment.all
     @users = User.all
+    @like_count = Like.where(post_id:params[:id]).count
   end
 
   def search

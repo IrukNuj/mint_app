@@ -7,14 +7,33 @@
   <br>
 
   <% u = @users.find_by(username: @post.username) %>
+
+ <% if user_signed_in? %>
+    <% if Like.find_by(user_id: current_user.id,post_id: @post.id) %>
+      fav
+      <%= link_to("/likes/#{@post.id}/destroy",{method:"post"}) do %>
+        <span class="fa fa-star like-btn favorited"></span>
+      <% end %>
+      <%= @like_count %>
+    <% else %>
+      fav
+      <%= link_to("/likes/#{@post.id}/create",{method:"post"}) do %>
+        <span class="fa fa-star like-btn favorite"></span>
+      <% end %>
+      <%= @like_count %>
+    <% end %>
+  <% else %>
+  <% end %>
+
   <% if u.icon.blank? %>
     <img src="/default_user.png" width="70" height="70" class="comment_user_icon user_icon">
   <% else %>
     <img src="<%= u.icon %>" width="70" height="70" class="comment_user_icon user_icon">
   <% end %>
 
-  <p>Posted by @<%= @post.username %>
-    <br>投稿日 : <%= @post.created_at %></p>
+  <br>
+  Posted by @<%= @post.username %><br>
+  投稿日 : <%= @post.created_at %><br>
   <%= link_to("編集する","/post/#{@post.id}/edit") %>
   <%= link_to("削除する","/post/#{@post.id}/destroy",{method:"post"})%>
   <% #link_toのみではrouteのgetにしか接続できない(らしい)ので %>
