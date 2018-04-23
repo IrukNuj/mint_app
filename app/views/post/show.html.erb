@@ -8,21 +8,18 @@
 
   <% u = @users.find_by(username: @post.username) %>
 
- <% if user_signed_in? %>
-    <% if Like.find_by(user_id: current_user.id,post_id: @post.id) %>
-      fav
-      <%= link_to("/likes/#{@post.id}/destroy",{method:"post"}) do %>
-        <span class="fa fa-star like-btn favorited"></span>
-      <% end %>
-      <%= @like_count %>
-    <% else %>
-      fav
-      <%= link_to("/likes/#{@post.id}/create",{method:"post"}) do %>
-        <span class="fa fa-star like-btn favorite"></span>
-      <% end %>
-      <%= @like_count %>
+  <% if Like.find_by(user_id: current_user.id,post_id: @post.id) %>
+    fav
+    <%= link_to("/likes/#{@post.id}/destroy",{method:"post"}) do %>
+      <span class="fa fa-star like-btn favorited"></span>
     <% end %>
+    <%= @like_count %>
   <% else %>
+    fav
+    <%= link_to("/likes/#{@post.id}/create",{method:"post"}) do %>
+      <span class="fa fa-star like-btn favorite"></span>
+    <% end %>
+    <%= @like_count %>
   <% end %>
 
   <% if u.icon.blank? %>
@@ -48,12 +45,12 @@
     <div class="entry-inner">
       <p><%= c.content %></p>
       <% if u.icon.blank? %>
-        <img src="/default_user.png" width="70" height="70" class="comment_user_icon user_icon">
+        <img src="/default_user.png" width="50" height="50" class="comment_user_icon user_icon">
       <% else %>
-        <img src="<%= u.icon %>" width="70" height="70" class="comment_user_icon user_icon">
+        <img src="<%= u.icon %>" width="50" height="50" class="comment_user_icon user_icon">
       <% end %>
-      <p>Commented by @<%= u.username %>
-        <br>投稿日 : <%= c.created_at %></p>
+      Commented by @<%= u.username %>
+      <br>投稿日 : <%= c.created_at %>
     </div>
   <% else %>
   <% end %>

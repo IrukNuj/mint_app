@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @id = params[:id]
     @user = User.find_by(id:params[:id])
     @posts = Post.all.order(created_at: :desc)
+    @likes = Like.all
   end
 
   def index

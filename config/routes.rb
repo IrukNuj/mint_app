@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   get 'users/index'
   get 'users/:id' => 'users#show'
 
+  get 'likes/index'
   post "likes/:post_id/create" => "likes#create"
   post "likes/:post_id/destroy" => "likes#destroy"
 
