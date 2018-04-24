@@ -7,6 +7,9 @@ class User < ApplicationRecord
 
   mount_uploader :icon, PictureUploader
 
+  has_many :posts
+
+
 #  validates_presence_of :icon, on: :update
   #usernameを必須とする
 #      validates_uniqueness_of :username

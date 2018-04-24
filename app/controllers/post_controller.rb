@@ -10,6 +10,7 @@ class PostController < ApplicationController
   end
 
   def create
+  #  current_user.post.new
     @post = Post.new(content: params[:content],title: params[:title],username: current_user.username) #textareaのname → paramsに引っ張ってSAVE
     @post.save
 
@@ -41,10 +42,6 @@ class PostController < ApplicationController
     @comments = Comment.all
     @users = User.all
     @like_count = Like.where(post_id:params[:id]).count
-  end
-
-  def search
-    @user=current_user
   end
 
 end
