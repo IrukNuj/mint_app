@@ -16,7 +16,7 @@
   <% @posts.each do |p| %>
     <% if p.username == @user.username %>
       <div class="entry-inner">
-        <p><%= link_to(p.title,"/post/#{p.id}}") %></p>
+        <p><%= link_to(p.title,"/post/#{p.id}") %></p>
         <p>Posted by @<%= p.username %><br>投稿日 : <%= p.created_at %></p>
       </div>
     <% else %>
@@ -28,7 +28,7 @@
     <% if l.user_id == @user.id %>
       <% p = @posts.find_by(id: l.post_id) %>
       <div class="entry-inner">
-        <p><%= link_to(p.title,"/post/#{p.id}}") %></p>
+        <p><%= link_to(p.title,"/post/#{p.id}") %></p>
         <p>Posted by @<%= p.username %><br>投稿日 : <%= p.created_at %></p>
       </div>
     <% else %>

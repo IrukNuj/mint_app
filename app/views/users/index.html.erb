@@ -6,7 +6,7 @@
     <% else %>
       <img src="<%= u.icon %>" width="112" height="112" class="index_user_icon user_icon">
     <% end %>
-    <p>@<%= link_to(u.username,"/users/#{u.id}}") %></p>
+    <p>@<%= link_to(u.username,"/users/#{u.id}") %></p>
   <p>登録日 : <%= u.created_at %></p>
   </div>
 <% end %>
