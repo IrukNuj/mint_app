@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20180423183831) do
     t.string "to_user"
     t.string "from_user"
     t.string "from_user_id"
-    t.string "post_id"
+    t.string "post_id" #intでいい
   end
 
   create_table "image_files", force: :cascade do |t|

@@ -68,9 +68,7 @@
 }
 
 .setting::after{
-    content: url(/gear.png);
-    padding-top: 40px;
-    margin-top: 40px;
+
 }
 
 .post::after{
