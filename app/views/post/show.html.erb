@@ -8,12 +8,20 @@
 
   <% u = @users.find_by(username: @post.username) %>
 
-  <% if Like.find_by(user_id: current_user.id,post_id: @post.id) %>
-    fav
-    <%= link_to("/likes/#{@post.id}/destroy",{method:"post"}) do %>
-      <span class="fa fa-star like-btn favorited"></span>
+  <% if user_signed_in? %>
+    <% if Like.find_by(user_id: current_user.id,post_id: @post.id) %>
+      fav
+      <%= link_to("/likes/#{@post.id}/destroy",{method:"post"}) do %>
+        <span class="fa fa-star like-btn favorited"></span>
+      <% end %>
+      <%= @like_count %>
+    <% else %>
+      fav
+      <%= link_to("/likes/#{@post.id}/create",{method:"post"}) do %>
+        <span class="fa fa-star like-btn favorite"></span>
+      <% end %>
+      <%= @like_count %>
     <% end %>
-    <%= @like_count %>
   <% else %>
     fav
     <%= link_to("/likes/#{@post.id}/create",{method:"post"}) do %>
