@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => 'home#top'
 
   get 'post/index'
   get 'post/new'
@@ -19,7 +20,6 @@ Rails.application.routes.draw do
 #ここまでテスト用(見りゃわかるか((()
 
   get 'home/index'
-  root 'home#top'
 
   post 'comment/create'
   get 'comment/index'
