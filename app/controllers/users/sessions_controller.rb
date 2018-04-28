@@ -11,7 +11,7 @@ class Users::SessionsController < Devise::SessionsController
   # POST /resource/sign_in
    def create
      super
-     redirect_to, 'static_pages/index'
+     redirect_to('static_pagesindex')
    end
 
   # DELETE /resource/sign_out
