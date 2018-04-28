@@ -24,9 +24,7 @@
     <% end %>
   <% else %>
     fav
-    <%= link_to("/likes/#{@post.id}/create",{method:"post"}) do %>
-      <span class="fa fa-star like-btn favorite"></span>
-    <% end %>
+    <span class="fa fa-star like-btn favorite"></span>
     <%= @like_count %>
   <% end %>
 
