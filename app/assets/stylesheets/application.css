@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
 
  header{
    background-color: rgba(4,180,174,0.75);
