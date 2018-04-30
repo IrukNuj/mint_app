@@ -2,7 +2,6 @@
 
   <h2>@<%= @user.username %></h2>
 
-
   <div class="user_icon_tabe">
     <% if @user.icon.blank? %>
       <img src="/default_user.png" width="200" height="200" class="user_icon">
@@ -10,6 +9,7 @@
       <img src="<%= @user.icon.to_s %>" width="200" height="200" class="user_icon">
     <% end %>
   </div>
+
   <p>登録日 : <%= @user.created_at %></p>
 
   <h3>posts by @<%= @user.username %></h3>
@@ -20,7 +20,6 @@
         <p><%= link_to(p.title,"/post/#{p.id}") %></p>
         <p>Posted by @<%= p.username %><br>投稿日 : <%= p.created_at %></p>
       </div>
-    <% else %>
     <% end %>
   <% end %>
 

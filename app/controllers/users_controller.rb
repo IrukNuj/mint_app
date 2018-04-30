@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @id = params[:id]
-    @user = User.find_by(id:params[:id])
+    @user = User.find_by(id: params[:id])
     @posts = Post.all.order(created_at: :desc)
     @likes = Like.all
     #@post = @user.post
