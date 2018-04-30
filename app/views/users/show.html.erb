@@ -13,6 +13,7 @@
   <p>登録日 : <%= @user.created_at %></p>
 
   <h3>posts by @<%= @user.username %></h3>
+
   <% @posts.each do |p| %>
     <% if p.username == @user.username %>
       <div class="entry-inner">
@@ -24,6 +25,7 @@
   <% end %>
 
   <h3>favorited by @<%= @user.username %></h3>
+
   <% @likes.each do |l| %>
     <% if l.user_id == @user.id %>
       <% p = @posts.find_by(id: l.post_id) %>
@@ -31,7 +33,6 @@
         <p><%= link_to(p.title,"/post/#{p.id}") %></p>
         <p>Posted by @<%= p.username %><br>投稿日 : <%= p.created_at %></p>
       </div>
-    <% else %>
     <% end %>
   <% end %>
 
