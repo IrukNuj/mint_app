@@ -3,7 +3,7 @@
 </h1>
 
 <div class="entry-inner">
-  <p><%= @post.content %></p>
+  <p><%= @post.content.html_safe %></p>
   <br>
 
   <% u = @users.find_by(username: @post.username) %>
