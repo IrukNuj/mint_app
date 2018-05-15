@@ -1,0 +1,30 @@
+current directory: /mnt/c/Users/Iruk/Desktop/various/Programming/Cirkit_sys/mint_app/vendor/bundle/ruby/2.3.0/gems/rmagick-2.16.0/ext/RMagick
+/home/Iruk_Nuj/.rbenv/versions/2.3.3/bin/ruby -r ./siteconf20180502-562-elj6eu.rb extconf.rb
+checking for gcc... yes
+checking for Magick-config... no
+checking for pkg-config... no
+Can't install RMagick 2.16.0. Can't find Magick-config or pkg-config in /home/Iruk_Nuj/.rbenv/versions/2.3.3/bin:/home/Iruk_Nuj/.rbenv/libexec:/home/Iruk_Nuj/.rbenv/plugins/ruby-build/bin:/home/Iruk_Nuj/.rbenv/shims:/home/Iruk_Nuj/.rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/ConEmu:/mnt/c/Program Files/ConEmu/ConEmu:/mnt/c/Program Files (x86)/Common Files/Oracle/Java/javapath_target_373359:/mnt/c/ProgramData/Oracle/Java/javapath_target_542734:/mnt/c/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler:/mnt/c/MinGW/bin:/mnt/c/Program Files (x86)/Intel/iCLS Client:/mnt/c/Program Files/Intel/iCLS Client:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/IPT:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/IPT:/mnt/c/Program Files/Intel/WiFi/bin:/mnt/c/Program Files/Common Files/Intel/WirelessCommon:/mnt/c/PostgreSQL/pg10/bin:/mnt/c/Users/Iruk/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/Iruk/AppData/Local/atom/bin:/snap/bin
+
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/home/Iruk_Nuj/.rbenv/versions/2.3.3/bin/$(RUBY_BASE_NAME)
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /mnt/c/Users/Iruk/Desktop/various/Programming/Cirkit_sys/mint_app/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0-static/rmagick-2.16.0/mkmf.log
+
+extconf failed, exit code 1
