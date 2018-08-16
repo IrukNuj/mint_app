@@ -12,12 +12,21 @@ NULLCMD = :
 #### Start of system configuration section. ####
 
 srcdir = .
+<<<<<<< HEAD
 topdir = /Users/iruk_nuj/.rbenv/versions/2.3.3/include/ruby-2.3.0
 hdrdir = $(topdir)
 arch_hdrdir = /Users/iruk_nuj/.rbenv/versions/2.3.3/include/ruby-2.3.0/x86_64-darwin17
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
 prefix = $(DESTDIR)/Users/iruk_nuj/.rbenv/versions/2.3.3
+=======
+topdir = /home/Iruk_Nuj/.rbenv/versions/2.3.3/include/ruby-2.3.0
+hdrdir = $(topdir)
+arch_hdrdir = /home/Iruk_Nuj/.rbenv/versions/2.3.3/include/ruby-2.3.0/x86_64-linux
+PATH_SEPARATOR = :
+VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
+prefix = $(DESTDIR)/home/Iruk_Nuj/.rbenv/versions/2.3.3
+>>>>>>> 8639d9c940b68ba54425080dc796204b7d597d92
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -31,8 +40,13 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
+<<<<<<< HEAD
 sitearchdir = $(DESTDIR)./.gem.20180816-8577-1rcrzn7
 sitelibdir = $(DESTDIR)./.gem.20180816-8577-1rcrzn7
+=======
+sitearchdir = $(DESTDIR)./.gem.20180502-21695-7p8awy
+sitelibdir = $(DESTDIR)./.gem.20180502-21695-7p8awy
+>>>>>>> 8639d9c940b68ba54425080dc796204b7d597d92
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -51,7 +65,11 @@ htmldir = $(docdir)
 infodir = $(datarootdir)/info
 docdir = $(datarootdir)/doc/$(PACKAGE)
 oldincludedir = $(DESTDIR)/usr/include
+<<<<<<< HEAD
 includedir = $(SDKROOT)$(prefix)/include
+=======
+includedir = $(prefix)/include
+>>>>>>> 8639d9c940b68ba54425080dc796204b7d597d92
 localstatedir = $(prefix)/var
 sharedstatedir = $(prefix)/com
 sysconfdir = $(prefix)/etc
@@ -63,12 +81,21 @@ bindir = $(exec_prefix)/bin
 archdir = $(rubyarchdir)
 
 
+<<<<<<< HEAD
 CC = clang
 CXX = clang++
 LIBRUBY = $(LIBRUBY_A)
 LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a
 LIBRUBYARG_SHARED = 
 LIBRUBYARG_STATIC = -l$(RUBY_SO_NAME)-static -framework CoreFoundation
+=======
+CC = gcc
+CXX = g++
+LIBRUBY = $(LIBRUBY_A)
+LIBRUBY_A = lib$(RUBY_SO_NAME)-static.a
+LIBRUBYARG_SHARED = -Wl,-R$(libdir) -L$(libdir) 
+LIBRUBYARG_STATIC = -Wl,-R$(libdir) -L$(libdir) -l$(RUBY_SO_NAME)-static
+>>>>>>> 8639d9c940b68ba54425080dc796204b7d597d92
 empty =
 OUTFLAG = -o $(empty)
 COUTFLAG = -o $(empty)
@@ -78,6 +105,7 @@ cflags   =  $(optflags) $(debugflags) $(warnflags)
 cxxflags =  $(optflags) $(debugflags) $(warnflags)
 optflags = -O3 -fno-fast-math
 debugflags = -ggdb3
+<<<<<<< HEAD
 warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wshorten-64-to-32 -Wimplicit-function-declaration -Wdivision-by-zero -Wdeprecated-declarations -Wextra-tokens
 CCDLFLAGS = -fno-common
 CFLAGS   = $(CCDLFLAGS)  -O3 -Wno-error=shorten-64-to-32  -pipe $(ARCH_FLAG)
@@ -91,6 +119,21 @@ ARCH_FLAG =
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
 LDSHARED = $(CC) -dynamic -bundle
 LDSHAREDXX = $(CXX) -dynamic -bundle
+=======
+warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration -Wdeprecated-declarations -Wno-packed-bitfield-compat -Wno-maybe-uninitialized
+CCDLFLAGS = -fPIC
+CFLAGS   = $(CCDLFLAGS) $(cflags) $(ARCH_FLAG)
+INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
+DEFS     = 
+CPPFLAGS =  -I/home/Iruk_Nuj/.rbenv/versions/2.3.3/include  $(DEFS) $(cppflags)
+CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
+ldflags  = -L. -L/home/Iruk_Nuj/.rbenv/versions/2.3.3/lib  -fstack-protector -rdynamic -Wl,-export-dynamic
+dldflags =  
+ARCH_FLAG = 
+DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
+LDSHARED = $(CC) -shared
+LDSHAREDXX = $(CXX) -shared
+>>>>>>> 8639d9c940b68ba54425080dc796204b7d597d92
 AR = ar
 EXEEXT = 
 
@@ -101,7 +144,11 @@ RUBY_VERSION_NAME = $(RUBY_BASE_NAME)-$(ruby_version)
 RUBYW_BASE_NAME = rubyw
 RUBY_BASE_NAME = ruby
 
+<<<<<<< HEAD
 arch = x86_64-darwin17
+=======
+arch = x86_64-linux
+>>>>>>> 8639d9c940b68ba54425080dc796204b7d597d92
 sitearch = $(arch)
 ruby_version = 2.3.0
 ruby = $(bindir)/$(RUBY_BASE_NAME)
@@ -110,8 +157,13 @@ ruby_headers = $(hdrdir)/ruby.h $(hdrdir)/ruby/ruby.h $(hdrdir)/ruby/defines.h $
 
 RM = rm -f
 RM_RF = $(RUBY) -run -e rm -- -rf
+<<<<<<< HEAD
 RMDIRS = rmdir -p
 MAKEDIRS = mkdir -p
+=======
+RMDIRS = rmdir --ignore-fail-on-non-empty -p
+MAKEDIRS = /bin/mkdir -p
+>>>>>>> 8639d9c940b68ba54425080dc796204b7d597d92
 INSTALL = /usr/bin/install -c
 INSTALL_PROG = $(INSTALL) -m 0755
 INSTALL_DATA = $(INSTALL) -m 644
@@ -123,7 +175,11 @@ TOUCH = exit >
 preload = 
 
 libpath = . $(libdir)
+<<<<<<< HEAD
 LIBPATH =  -L. -L$(libdir)
+=======
+LIBPATH =  -L. -L$(libdir) -Wl,-R$(libdir)
+>>>>>>> 8639d9c940b68ba54425080dc796204b7d597d92
 DEFFILE = 
 
 CLEANFILES = mkmf.log
@@ -134,7 +190,11 @@ extout =
 extout_prefix = 
 target_prefix = 
 LOCAL_LIBS = 
+<<<<<<< HEAD
 LIBS =   -lpthread -ldl -lobjc 
+=======
+LIBS =   -lpthread -ldl -lcrypt -lm   -lc
+>>>>>>> 8639d9c940b68ba54425080dc796204b7d597d92
 ORIG_SRCS = websocket_mask.c
 SRCS = $(ORIG_SRCS) 
 OBJS = websocket_mask.o
@@ -142,7 +202,11 @@ HDRS =
 TARGET = websocket_mask
 TARGET_NAME = websocket_mask
 TARGET_ENTRY = Init_$(TARGET_NAME)
+<<<<<<< HEAD
 DLLIB = $(TARGET).bundle
+=======
+DLLIB = $(TARGET).so
+>>>>>>> 8639d9c940b68ba54425080dc796204b7d597d92
 EXTSTATIC = 
 STATIC_LIB = 
 
@@ -155,7 +219,11 @@ HDRDIR        = $(rubyhdrdir)/ruby$(target_prefix)
 ARCHHDRDIR    = $(rubyhdrdir)/$(arch)/ruby$(target_prefix)
 
 TARGET_SO     = $(DLLIB)
+<<<<<<< HEAD
 CLEANLIBS     = $(TARGET).bundle 
+=======
+CLEANLIBS     = $(TARGET).so 
+>>>>>>> 8639d9c940b68ba54425080dc796204b7d597d92
 CLEANOBJS     = *.o  *.bak
 
 all:    $(DLLIB)
@@ -254,7 +322,10 @@ $(DLLIB): $(OBJS) Makefile
 	$(ECHO) linking shared-object $(DLLIB)
 	-$(Q)$(RM) $(@)
 	$(Q) $(LDSHARED) -o $@ $(OBJS) $(LIBPATH) $(DLDFLAGS) $(LOCAL_LIBS) $(LIBS)
+<<<<<<< HEAD
 	$(Q) $(POSTLINK)
+=======
+>>>>>>> 8639d9c940b68ba54425080dc796204b7d597d92
 
 
 

@@ -30,7 +30,7 @@ gem 'devise'#, '4.1.1'
 gem 'jquery-rails'
 gem 'devise-i18n'
 gem 'carrierwave'
-gem 'rmagick'
+# gem 'rmagick' 要らないし、bundle installの手間
 gem 'config'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
